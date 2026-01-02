@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Suisse Int\'l', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background-color: #616d4a;
+    color: #ffff59;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.top-text {
+    position: absolute;
+    top: 26px;
+    left: 26px;
+    right: 26px;
+    font-size: 42px;
+    line-height: normal;
+    text-transform: uppercase;
+    text-align: justify;
+    color: #ffff59;
+    z-index: 10;
+}
+
+.draggable-images {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.draggable-item {
+    position: absolute;
+    cursor: grab;
+    z-index: 5;
+    width: 276px;
+    height: 276px;
+    transform-origin: center center;
+}
+
+.draggable-item-intersect {
+    width: 212.442px;
+    height: 276.288px;
+}
+
+.draggable-item:active {
+    cursor: grabbing;
+}
+
+.draggable-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    pointer-events: none;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.draggable-item:not(.dragging):hover img {
+    transform: scale(1.15);
+}
+
+.draggable-item.dragging {
+    z-index: 30;
+    cursor: grabbing;
+}
+
+.draggable-item.dragging img {
+    transform: scale(1) !important;
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bottom-links {
+    position: absolute;
+    bottom: 30px;
+    left: 26px;
+    right: 26px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 42px;
+    text-transform: uppercase;
+    color: #ffff59;
+    z-index: 10;
+}
+
+.bottom-links p {
+    line-height: normal;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.bottom-links p:hover {
+    opacity: 0.7;
+}
+
